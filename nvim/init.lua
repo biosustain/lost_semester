@@ -30,12 +30,22 @@ local ensure_packer = function()
   return false
 end
 
+-- LSP remaps
+local lsp_opts = { noremap = true, silent = true }
+vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", lsp_opts)
+vim.api.nvim_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", lsp_opts)
+vim.api.nvim_set_keymap("n", "gv", "<cmd>lua vim.diagnostic.goto_prev()<CR>", lsp_opts)
+vim.api.nvim_set_keymap("n", "gb", "<cmd>lua vim.diagnostic.goto_next()<CR>", lsp_opts)
+vim.api.nvim_set_keymap("n", ";", "<cmd>lua vim.diagnostic.open_float()<CR>", lsp_opts)
+
 local packer_bootstrap = ensure_packer()
 
-return require('packer').startup(function(use)
+require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
   use "folke/tokyonight.nvim"
+  -- Lsp
+  use "neovim/nvim-lspconfig"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -44,3 +54,8 @@ return require('packer').startup(function(use)
   end
 end)
 
+-- LSP configs
+require("lspconfig").pylsp.setup({
+  cmd = {"pylsp"},
+  filetypes = { "python" },
+})
