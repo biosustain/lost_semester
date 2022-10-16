@@ -15,6 +15,9 @@ vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true, silent = true })
 -- No escape
 vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true, silent = true })
 
+-- Settings
+vim.cmd[[colorscheme tokyonight]]
+
 -- Plugins with Packer
 local ensure_packer = function()
   local fn = vim.fn
@@ -32,7 +35,7 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
-  -- use "folke/tokyonight.nvim"
+  use "folke/tokyonight.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
