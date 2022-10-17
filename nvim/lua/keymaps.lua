@@ -22,6 +22,7 @@ vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true, silent = true })
 -- Telescope stuff
 vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope find_files<CR>", { noremap = true, silent = false })
 vim.api.nvim_set_keymap("n", "<leader>g", ":Telescope live_grep<CR>", { noremap = true, silent = false })
+vim.api.nvim_set_keymap("n", "<leader>n", ":lua require('latex-scope').bib()<CR>", { noremap=true, silent=false })
 
 -- LSP remaps
 local lsp_opts = { noremap = true, silent = true }

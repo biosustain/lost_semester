@@ -3,6 +3,7 @@ require "keymaps"
 require "mylsp"
 require "mycmp"
 require "mytrees"
+require "latex-scope"
 
 -- Settings
 vim.cmd[[colorscheme tokyonight]]
