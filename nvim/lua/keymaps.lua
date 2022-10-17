@@ -1,3 +1,7 @@
+-- Leader key is space
+vim.api.nvim_set_keymap("", "<Space>", "<nop>", { noremap = true, silent = true })
+vim.g.mapleader = " "
+
 -- Disable arrow keys
 vim.api.nvim_set_keymap("", "<Left>", "<nop>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("", "<Right>", "<nop>", { noremap = true, silent = true })
@@ -14,6 +18,10 @@ vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true, silent = true })
 
 -- No escape
 vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true, silent = true })
+
+-- Telescope stuff
+vim.api.nvim_set_keymap("n", "<leader>f", ":Telescope find_files<CR>", { noremap = true, silent = false })
+vim.api.nvim_set_keymap("n", "<leader>g", ":Telescope live_grep<CR>", { noremap = true, silent = false })
 
 -- LSP remaps
 local lsp_opts = { noremap = true, silent = true }
