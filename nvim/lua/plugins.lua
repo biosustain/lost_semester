@@ -19,6 +19,16 @@ require('packer').startup(function(use)
   use "folke/tokyonight.nvim"
   -- Lsp
   use "neovim/nvim-lspconfig"
+  -- Autocomplete
+  use("onsails/lspkind-nvim")
+  use("hrsh7th/nvim-cmp")
+  use("hrsh7th/cmp-vsnip")
+  use("hrsh7th/vim-vsnip")
+  use("rafamadriz/friendly-snippets")
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+  use("hrsh7th/cmp-nvim-lua")
+  use("hrsh7th/cmp-nvim-lsp")
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
