@@ -40,6 +40,8 @@ require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  -- git gutter
+  use 'lewis6991/gitsigns.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -48,3 +50,4 @@ require('packer').startup(function(use)
   end
 end)
 
+require('gitsigns').setup()
