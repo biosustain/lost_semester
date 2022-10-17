@@ -29,6 +29,13 @@ require('packer').startup(function(use)
   use("hrsh7th/cmp-path")
   use("hrsh7th/cmp-nvim-lua")
   use("hrsh7th/cmp-nvim-lsp")
+  -- Tressitter
+  use {
+      'nvim-treesitter/nvim-treesitter',
+      run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  }
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use 'nvim-treesitter/playground' -- just for explaining, you can remove this
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
