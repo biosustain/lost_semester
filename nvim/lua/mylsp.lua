@@ -22,3 +22,8 @@ require("lspconfig").texlab.setup({
   }
 })
 
+-- docker
+require("lspconfig").dockerls.setup({
+	cmd = { "docker-langserver", "--stdio" },
+	root_dir = vim.loop.cwd,
+})
