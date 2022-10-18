@@ -3,3 +3,8 @@ services:
   sender:
     image: sender:latest
     build: ./sender
+  receiver:
+    image: receiver:latest
+    build: ./receiver
+    ports:
+      - "8001:5000"
