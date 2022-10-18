@@ -23,4 +23,4 @@ jobs:
         python -m pip install .
         python -m pip install pytest
     - name: Functional test
-      run: python -m pytest
+      run: python -m pytest tests/
